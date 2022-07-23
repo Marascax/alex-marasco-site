@@ -27,63 +27,95 @@ const Home = () => {
         <PaperItem 
             elevation={0} 
             sx={{ 
-                height: '100vh'
-            }}
-        >
+                height: '100vh',
+                width: '100vw',
+                position: 'absolute'
+            }}>
+
             <Head>
                 <title>Alexander Marasco</title>
                 <meta name="description" content="Welcome to the personal website for Alexander Marasco" />
-                {/* <link rel="icon" href="/favicon.ico" /> */}
             </Head>
+
             <Stack 
                 direction="column" 
-                sx={{ 
-                    height: '100%',
-                    zIndex: 2 
-                }}
-            >
+                spacing={2}
+                width='100%'
+                height='100%'
+                // want this to appear over decoration PaperItem
+                position='absolute'
+                zIndex={10}>
+
                 {/* Name plate at the top */}
                 <Box
-                    sx={{
-                        width: '100%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        mt: '3%'
-                    }}
-                >
+                    width='100%'
+                    height='auto'
+                    display='flex'
+                    justifyContent='center'>
+
                     <Typography variant='h2' fontWeight={400}>
                         ALEXANDER MARASCO
                     </Typography>
+                    
                 </Box>
-                {/* Image */}
+
                 <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        width: '100%',
-                        overflow: 'hidden',
-                        mt: '2%'
-                    }}
-                >
-                    <Slide 
-                        direction='up' 
-                        in 
-                        mountOnEnter 
-                        unmountOnExit 
-                        container={containerRef.current}
-                        easing='ease-in-out'
-                    >
-                    <CardMedia
-                        component='img'
-                        sx={{
-                            width: 'auto',
-                            maxHeight: '90%'
-                        }}
-                        src='/Alex_Marasco.jpg'
-                    />
-                    </Slide>
+                    width='100%'
+                    height='auto'
+                    display='flex'
+                    overflow='hidden'>
+
+                    {/* side menu | image | side menu */}
+                    <Stack
+                        direction='row'
+                        width='100%'>
+
+                        {/* Image */}
+                        <Box
+                            width='100%'
+                            display='flex'
+                            justifyContent='center'
+                            overflow='hidden'>
+
+                            {/* Image moves from bottom to top */}
+                            <Slide 
+                                direction='up' 
+                                in 
+                                mountOnEnter 
+                                unmountOnExit 
+                                container={containerRef.current}
+                                easing='ease-in-out'>
+
+                                <CardMedia
+                                    component='img'
+                                    sx={{
+                                        width: 'auto',
+                                        height: 'auto'
+                                    }}
+                                    src='/Alex_Marasco.jpg'/>
+
+                            </Slide>
+
+                        </Box>
+
+                    </Stack>
+
                 </Box>
+
             </Stack>
+
+            {/* aethstetic paper item to avoid bland background */}
+            <PaperItem 
+                elevation={1} 
+                sx={{ 
+                    height: '15%', 
+                    position: 'absolute', 
+                    zIndex: 1,
+                    left: 0,
+                    right: 0,
+                    bottom: 0
+                }}/>
+
         </PaperItem>
     )
 }
