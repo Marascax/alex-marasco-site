@@ -49,7 +49,6 @@ const Home = () => {
                 {/* Name plate at the top */}
                 <Box
                     width='100%'
-                    height='auto'
                     display='flex'
                     justifyContent='center'
                     mt='1%'>
@@ -62,7 +61,6 @@ const Home = () => {
 
                 <Box
                     width='100%'
-                    height='auto'
                     display='flex'
                     overflow='hidden'>
 
