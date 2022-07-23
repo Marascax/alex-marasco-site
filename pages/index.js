@@ -51,7 +51,8 @@ const Home = () => {
                     width='100%'
                     height='auto'
                     display='flex'
-                    justifyContent='center'>
+                    justifyContent='center'
+                    mt='1%'>
 
                     <Typography variant='h2' fontWeight={400}>
                         ALEXANDER MARASCO
@@ -68,7 +69,8 @@ const Home = () => {
                     {/* side menu | image | side menu */}
                     <Stack
                         direction='row'
-                        width='100%'>
+                        width='100%'
+                        mb='1%'>
 
                         {/* Image */}
                         <Box
