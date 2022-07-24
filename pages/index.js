@@ -11,8 +11,6 @@ import SideMenu from '../containers/sideMenu';
 
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
 import { useAppContext } from '../lib/appContext';
 
@@ -27,14 +25,14 @@ const Home = () => {
 
     // menu for quickly getting information about myself
 
-    // settings for menu options
+    // settings for quick text menu options
     const quickTextMenuSettings = {
         hover: {
             transformOrigin: 'top left'
         }
     }
 
-    // the menu options
+    // quick text menu options
     const quickTextMenu = [
         {
             title: 'About Me',
@@ -46,17 +44,43 @@ const Home = () => {
         }
     ]
 
+    // menu for navigation
+
+    const navigationMenuSettings = {
+        hover: {
+            transformOrigin: 'top right'
+        }
+    }
+
+    const navigationMenu = [
+        {
+            title: 'Work History',
+            settings: navigationMenuSettings
+        },
+        {
+            title: 'Education',
+            settings: navigationMenuSettings
+        },
+        {
+            title: 'Accolades',
+            settings: navigationMenuSettings
+        }
+    ]
+
     return (
         <PaperItem 
             elevation={0} 
             sx={{ 
                 height: '100vh',
                 width: '100vw',
-                position: 'absolute'
+                position: 'absolute',
+                backgroundColor: 'primary.main'
             }}>
 
             <Head>
-                <title>Alexander Marasco</title>
+                <title>
+                    Alexander Marasco
+                </title>
                 <meta name="description" content="Welcome to the personal website for Alexander Marasco" />
             </Head>
 
@@ -76,7 +100,10 @@ const Home = () => {
                     justifyContent='center'
                     mt='1%'>
 
-                    <Typography variant='h2' fontWeight={400}>
+                    <Typography 
+                        variant='h2'
+                        fontFamily='"Dancing Script"'
+                        fontWeight={700}>
                         ALEXANDER MARASCO
                     </Typography>
                     
@@ -95,7 +122,8 @@ const Home = () => {
 
                         {/* quick-text side menu */}
                         <Box
-                            width='35%'
+                            width='25%'
+                            maxWidth='25%'
                             mt='1%'
                             ml='1%'>
 
@@ -106,7 +134,7 @@ const Home = () => {
 
                         {/* Image */}
                         <Box
-                            //width='100%'
+                            width='50%'
                             display='flex'
                             justifyContent='center'
                             overflow='hidden'>
@@ -118,6 +146,7 @@ const Home = () => {
                                 mountOnEnter 
                                 unmountOnExit 
                                 container={containerRef.current}
+                                timeout={500} // duration in milliseconds
                                 easing='ease-in-out'>
 
                                 <CardMedia
@@ -132,6 +161,17 @@ const Home = () => {
 
                         </Box>
 
+                        {/* navigation side menu */}
+                        <Box
+                            width='25%'
+                            maxWidth='25%'
+                            mt='1%'
+                            mr='1%'>
+
+                            <SideMenu options={navigationMenu}/>
+
+                        </Box>
+
                     </Stack>
 
                 </Box>
@@ -143,11 +183,38 @@ const Home = () => {
                 elevation={1} 
                 sx={{ 
                     height: '15%', 
+                    backgroundColor: 'primary.main',
+                    position: 'absolute', 
+                    zIndex: 3,
+                    left: 0,
+                    right: 0,
+                    bottom: 0
+                }}/>
+
+            <PaperItem 
+                elevation={1} 
+                sx={{ 
+                    height: '15%', 
+                    opacity: '85%',
+                    backgroundColor: 'primary.main',
+                    position: 'absolute', 
+                    zIndex: 2,
+                    left: 0,
+                    right: 0,
+                    bottom: '15%'
+                }}/>
+
+            <PaperItem 
+                elevation={1} 
+                sx={{ 
+                    height: '15%', 
+                    opacity: '60%',
+                    backgroundColor: 'primary.main',
                     position: 'absolute', 
                     zIndex: 1,
                     left: 0,
                     right: 0,
-                    bottom: 0
+                    bottom: '30%'
                 }}/>
 
         </PaperItem>
