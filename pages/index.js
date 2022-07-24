@@ -120,7 +120,7 @@ const Home = () => {
                                 mountOnEnter 
                                 unmountOnExit 
                                 container={containerRef.current}
-                                timeout={500}
+                                timeout={500} // duration in milliseconds
                                 easing='ease-in-out'>
 
                                 <CardMedia
@@ -148,10 +148,36 @@ const Home = () => {
                     height: '15%', 
                     backgroundColor: 'primary.main',
                     position: 'absolute', 
-                    zIndex: 1,
+                    zIndex: 3,
                     left: 0,
                     right: 0,
                     bottom: 0
+                }}/>
+
+            <PaperItem 
+                elevation={1} 
+                sx={{ 
+                    height: '15%', 
+                    opacity: '85%',
+                    backgroundColor: 'primary.main',
+                    position: 'absolute', 
+                    zIndex: 2,
+                    left: 0,
+                    right: 0,
+                    bottom: '15%'
+                }}/>
+
+            <PaperItem 
+                elevation={1} 
+                sx={{ 
+                    height: '15%', 
+                    opacity: '60%',
+                    backgroundColor: 'primary.main',
+                    position: 'absolute', 
+                    zIndex: 1,
+                    left: 0,
+                    right: 0,
+                    bottom: '30%'
                 }}/>
 
         </PaperItem>
