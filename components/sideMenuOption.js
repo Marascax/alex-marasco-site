@@ -8,6 +8,10 @@ const SideMenuOption = props => {
     const settings = props.settings;
 
     let defaultSettings = {
+        // default style settings
+        styling: {
+            backgroundColor: 'transparent'
+        },
         // default settings when mouse hovers
         hover: {
             cursor: 'pointer',
@@ -32,6 +36,8 @@ const SideMenuOption = props => {
     // "rightmost" = the object listed later
     // if the settings obj does not have a property defined, the spread still works and just enumerates no keys from settings
     const styleSettings = {
+        ...defaultSettings.styling,
+        ...settings.styling,
         '&:hover': {
             ...defaultSettings.hover,
             ...settings.hover
@@ -55,8 +61,8 @@ const SideMenuOption = props => {
             paddingBottom='5%'
             paddingLeft='2%'
             sx={{
-                ...styleSettings,
-                backgroundColor: 'primary.main',
+
+                ...styleSettings
             }}>
 
             <Typography variant='h4'>

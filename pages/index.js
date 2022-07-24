@@ -27,6 +27,9 @@ const Home = () => {
 
     // settings for quick text menu options
     const quickTextMenuSettings = {
+        styling: {
+            backgroundColor: 'primary.main'
+        },
         hover: {
             transformOrigin: 'top left'
         }
@@ -47,6 +50,9 @@ const Home = () => {
     // menu for navigation
 
     const navigationMenuSettings = {
+        styling: {
+            backgroundColor: 'primary.main'
+        },
         hover: {
             transformOrigin: 'top right'
         }
