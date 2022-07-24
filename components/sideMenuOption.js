@@ -2,20 +2,28 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 const SideMenuOption = props => {
+
     const title = props.title;
 
     const settings = props.settings;
 
     let defaultSettings = {
+        // default settings when mouse hovers
         hover: {
             cursor: 'pointer',
             transition: 'transform .2s ease-in-out',
             transform: 'scale(1.1)',
-            boxShadow: 3
+            boxShadow: 3,
+            filter: 'brightness(0.85)',
+            // make sure option appears over other options
+            zIndex: 10
         },
+        // default settings when mouse isn't hovering
         notHover: {
             transformOrigin: 'top left',
-            transition: '.2s ease-in-out'
+            transition: '.2s ease-in-out',
+            filter: 'brightness(1)',
+            zIndex: 0
         }
     }
 
@@ -38,9 +46,17 @@ const SideMenuOption = props => {
         <Box
             width='100%'
             height='100%'
-            padding='1%'
+
+            position='relative'
+
+            textAlign='center'
+
+            paddingTop='5%'
+            paddingBottom='5%'
+            paddingLeft='2%'
             sx={{
-                ...styleSettings
+                ...styleSettings,
+                backgroundColor: 'primary.main',
             }}>
 
             <Typography variant='h4'>
