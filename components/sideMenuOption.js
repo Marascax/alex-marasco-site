@@ -30,7 +30,8 @@ const SideMenuOption = props => {
             height='100%'
             padding='1%'
             sx={{
-                '&:hover': defaultHoverSettings
+                '&:hover': defaultHoverSettings,
+                transition: '.2s ease-in-out'
             }}>
 
             <Typography variant='h4'>
