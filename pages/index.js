@@ -25,12 +25,27 @@ const Home = () => {
 
     const containerRef = useRef(null);
 
+    // menu for quickly getting information about myself
+
+    // settings for menu options
+    const quickTextMenuSettings = {
+        hover: {
+            cursor: 'pointer',
+            transformOrigin: 'top left',
+            transform: 'scale(1.1)',
+            boxShadow: 3
+        }
+    }
+
+    // the menu options
     const quickTextMenu = [
         {
-            title: 'About Me'
+            title: 'About Me',
+            settings: quickTextMenuSettings
         },
         {
-            title: 'Contact Information'
+            title: 'Contact Information',
+            settings: quickTextMenuSettings
         }
     ]
 
