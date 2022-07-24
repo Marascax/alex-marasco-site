@@ -16,7 +16,13 @@ const theme = createTheme({
         }
     },
     typography: {
-        fontFamily: '"Roboto", "Ariel", "Helvetica", sans serif'
+        fontFamily: [
+            'Roboto',
+            'Arial',
+            'Helvetica',
+            'sans-serif',
+            'Dancing Script'
+        ].join(',')
     },
     components: {
         MuiTextField: {

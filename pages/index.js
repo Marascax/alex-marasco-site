@@ -57,7 +57,9 @@ const Home = () => {
             }}>
 
             <Head>
-                <title>Alexander Marasco</title>
+                <title>
+                    Alexander Marasco
+                </title>
                 <meta name="description" content="Welcome to the personal website for Alexander Marasco" />
             </Head>
 
@@ -77,7 +79,10 @@ const Home = () => {
                     justifyContent='center'
                     mt='1%'>
 
-                    <Typography variant='h2' fontWeight={400}>
+                    <Typography 
+                        variant='h2'
+                        fontFamily='"Dancing Script"'
+                        fontWeight={700}>
                         ALEXANDER MARASCO
                     </Typography>
                     
