@@ -10,16 +10,17 @@ const SideMenu = props => {
     const options = props.options;
 
     // create a side menu option for each option passed
-    const sideMenuOptions = options.map(option => {
-        <SideMenuOption title={option.title}/>
-    })
+    const sideMenuOptions = options.map((option, index) => {
+        return <SideMenuOption title={option.title} key={index}/>
+    });
 
     return (
         <Stack
-            divider={<Divider/>}
-        >
+            width='100%'
+            spacing={2}
+            divider={<Divider/>}>
 
-            {sideMenuOptions}
+        {sideMenuOptions}
 
         </Stack>
     )

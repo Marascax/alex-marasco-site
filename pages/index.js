@@ -7,8 +7,10 @@ import Slide from '@mui/material/Slide';
 import { styled } from '@mui/material/styles';
 
 import { useRef } from 'react';
+import SideMenu from '../containers/sideMenu';
 
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
@@ -22,6 +24,15 @@ const Home = () => {
     const context = useAppContext();
 
     const containerRef = useRef(null);
+
+    const quickTextMenu = [
+        {
+            title: 'About Me'
+        },
+        {
+            title: 'Contact Information'
+        }
+    ]
 
     return (
         <PaperItem 
@@ -70,9 +81,20 @@ const Home = () => {
                         width='100%'
                         mb='1%'>
 
+                        {/* quick-text side menu */}
+                        <Box
+                            width='35%'
+                            mt='1%'
+                            ml='1%'>
+
+                            <SideMenu options={quickTextMenu}/>
+
+                        </Box>
+                        
+
                         {/* Image */}
                         <Box
-                            width='100%'
+                            //width='100%'
                             display='flex'
                             justifyContent='center'
                             overflow='hidden'>
@@ -120,4 +142,9 @@ const Home = () => {
     )
 }
 
-export default Home;
+// issues with client and server side rendering emerged with className props not
+// matching, so this will dynamically render the component client-side
+// dynamic() allows for lazy loading React components
+// ssr = false to disable server-side rendering
+export default dynamic(() => Promise.resolve(Home), { ssr: false });
+
