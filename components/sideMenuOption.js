@@ -6,23 +6,33 @@ const SideMenuOption = props => {
 
     const settings = props.settings;
 
-    // default hover settings
-    let defaultHoverSettings = {
-        cursor: 'pointer',
-        transition: 'transform .2s ease-in-out',
-        transform: 'scale(1.1)',
-        boxShadow: 3
+    let defaultSettings = {
+        hover: {
+            cursor: 'pointer',
+            transition: 'transform .2s ease-in-out',
+            transform: 'scale(1.1)',
+            boxShadow: 3
+        },
+        notHover: {
+            transformOrigin: 'top left',
+            transition: '.2s ease-in-out'
+        }
     }
 
-    // override hover settings if props specifies them
-    defaultHoverSettings = (
-        // !! turns null or undefined into false
-        !!settings?.hover ? {
-            // props with same name has the "rightmost" (later obj listed) value used
-            ...defaultHoverSettings,
+    // merge the default and props settings together
+    // when using the spread operator, properties with the same name use the value from the "rightmost" obj
+    // "rightmost" = the object listed later
+    // if the settings obj does not have a property defined, the spread still works and just enumerates no keys from settings
+    const styleSettings = {
+        '&:hover': {
+            ...defaultSettings.hover,
             ...settings.hover
-        } : defaultHoverSettings
-    );
+        },
+        '&:not(:hover)': {
+            ...defaultSettings.notHover,
+            ...settings.notHover
+        }
+    }
 
     return (
         <Box
@@ -30,8 +40,7 @@ const SideMenuOption = props => {
             height='100%'
             padding='1%'
             sx={{
-                '&:hover': defaultHoverSettings,
-                transition: '.2s ease-in-out'
+                ...styleSettings
             }}>
 
             <Typography variant='h4'>
