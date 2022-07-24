@@ -11,8 +11,6 @@ import SideMenu from '../containers/sideMenu';
 
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
 import { useAppContext } from '../lib/appContext';
 
