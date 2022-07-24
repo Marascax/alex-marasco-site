@@ -52,7 +52,8 @@ const Home = () => {
             sx={{ 
                 height: '100vh',
                 width: '100vw',
-                position: 'absolute'
+                position: 'absolute',
+                backgroundColor: 'primary.main'
             }}>
 
             <Head>
@@ -95,7 +96,8 @@ const Home = () => {
 
                         {/* quick-text side menu */}
                         <Box
-                            width='35%'
+                            width='25%'
+                            maxWidth='25%'
                             mt='1%'
                             ml='1%'>
 
@@ -106,7 +108,7 @@ const Home = () => {
 
                         {/* Image */}
                         <Box
-                            //width='100%'
+                            width='50%'
                             display='flex'
                             justifyContent='center'
                             overflow='hidden'>
@@ -118,6 +120,7 @@ const Home = () => {
                                 mountOnEnter 
                                 unmountOnExit 
                                 container={containerRef.current}
+                                timeout={500}
                                 easing='ease-in-out'>
 
                                 <CardMedia
@@ -143,6 +146,7 @@ const Home = () => {
                 elevation={1} 
                 sx={{ 
                     height: '15%', 
+                    backgroundColor: 'primary.main',
                     position: 'absolute', 
                     zIndex: 1,
                     left: 0,
