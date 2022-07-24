@@ -5,7 +5,16 @@ const SideMenuOption = props => {
     const title = props.title;
 
     return (
-        <Box>
+        <Box
+            width='100%'
+            height='100%'
+            sx={{
+                '&:hover': {
+                    transformOrigin: 'top left',
+                    transform: 'scale(1.1)',
+                    boxShadow: 3
+                }
+            }}>
 
             <Typography variant='h4'>
                 {title}
