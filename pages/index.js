@@ -25,14 +25,14 @@ const Home = () => {
 
     // menu for quickly getting information about myself
 
-    // settings for menu options
+    // settings for quick text menu options
     const quickTextMenuSettings = {
         hover: {
             transformOrigin: 'top left'
         }
     }
 
-    // the menu options
+    // quick text menu options
     const quickTextMenu = [
         {
             title: 'About Me',
@@ -41,6 +41,29 @@ const Home = () => {
         {
             title: 'Contact Information',
             settings: quickTextMenuSettings
+        }
+    ]
+
+    // menu for navigation
+
+    const navigationMenuSettings = {
+        hover: {
+            transformOrigin: 'top right'
+        }
+    }
+
+    const navigationMenu = [
+        {
+            title: 'Work History',
+            settings: navigationMenuSettings
+        },
+        {
+            title: 'Education',
+            settings: navigationMenuSettings
+        },
+        {
+            title: 'Accolades',
+            settings: navigationMenuSettings
         }
     ]
 
@@ -135,6 +158,17 @@ const Home = () => {
                                     src='/Alex_Marasco.jpg'/>
 
                             </Slide>
+
+                        </Box>
+
+                        {/* navigation side menu */}
+                        <Box
+                            width='25%'
+                            maxWidth='25%'
+                            mt='1%'
+                            mr='1%'>
+
+                            <SideMenu options={navigationMenu}/>
 
                         </Box>
 
