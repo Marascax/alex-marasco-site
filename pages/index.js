@@ -30,10 +30,7 @@ const Home = () => {
     // settings for menu options
     const quickTextMenuSettings = {
         hover: {
-            cursor: 'pointer',
-            transformOrigin: 'top left',
-            transform: 'scale(1.1)',
-            boxShadow: 3
+            transformOrigin: 'top left'
         }
     }
 

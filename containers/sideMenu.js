@@ -15,7 +15,6 @@ const SideMenu = props => {
     return (
         <Stack
             width='100%'
-            spacing={2}
             divider={<Divider/>}>
 
             {sideMenuOptions}

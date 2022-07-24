@@ -7,22 +7,30 @@ const SideMenuOption = props => {
     const settings = props.settings;
 
     // default hover settings
-    let hoverSettings = {
+    let defaultHoverSettings = {
         cursor: 'pointer',
+        transition: 'transform .2s ease-in-out',
         transform: 'scale(1.1)',
         boxShadow: 3
     }
 
-    // get new hover settings if specified
-    // !! turns null or undefined into false
-    hoverSettings = !!settings?.hover ? settings.hover : hoverSettings;
+    // override hover settings if props specifies them
+    defaultHoverSettings = (
+        // !! turns null or undefined into false
+        !!settings?.hover ? {
+            // props with same name has the "rightmost" (later obj listed) value used
+            ...defaultHoverSettings,
+            ...settings.hover
+        } : defaultHoverSettings
+    );
 
     return (
         <Box
             width='100%'
             height='100%'
+            padding='1%'
             sx={{
-                '&:hover': hoverSettings
+                '&:hover': defaultHoverSettings
             }}>
 
             <Typography variant='h4'>
