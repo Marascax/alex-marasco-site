@@ -54,18 +54,12 @@ const SideMenuOption = props => {
             height='100%'
 
             position='relative'
-
-            textAlign='center'
-
-            paddingTop='5%'
-            paddingBottom='5%'
-            paddingLeft='2%'
             sx={{
 
                 ...styleSettings
             }}>
 
-            <Typography variant='h4'>
+            <Typography variant='h4' fontFamily='Roboto' fontWeight={300}>
                 {title}
             </Typography>
 

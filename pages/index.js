@@ -28,10 +28,14 @@ const Home = () => {
     // settings for quick text menu options
     const quickTextMenuSettings = {
         styling: {
-            backgroundColor: 'primary.main'
+            backgroundColor: 'primary.main',
+            textAlign: 'right',
+            paddingTop: '5%',
+            paddingBottom: '5%',
+            paddingRight: '2%'
         },
         hover: {
-            transformOrigin: 'top left'
+            transformOrigin: 'right'
         }
     }
 
@@ -51,10 +55,14 @@ const Home = () => {
 
     const navigationMenuSettings = {
         styling: {
-            backgroundColor: 'primary.main'
+            backgroundColor: 'primary.main',
+            textAlign: 'left',
+            paddingTop: '5%',
+            paddingBottom: '5%',
+            paddingLeft: '2%'
         },
         hover: {
-            transformOrigin: 'top right'
+            transformOrigin: 'left'
         }
     }
 
