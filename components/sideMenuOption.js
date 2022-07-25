@@ -18,7 +18,7 @@ const SideMenuOption = props => {
             transition: 'transform .2s ease-in-out',
             transform: 'scale(1.1)',
             boxShadow: 3,
-            filter: 'brightness(0.85)',
+            filter: 'brightness(1.2)',
             // make sure option appears over other options
             zIndex: 10
         },
@@ -55,7 +55,6 @@ const SideMenuOption = props => {
 
             position='relative'
             sx={{
-
                 ...styleSettings
             }}>
 

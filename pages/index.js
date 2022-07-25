@@ -32,7 +32,7 @@ const Home = () => {
             textAlign: 'right',
             paddingTop: '5%',
             paddingBottom: '5%',
-            paddingRight: '2%'
+            paddingRight: '5%'
         },
         hover: {
             transformOrigin: 'right'
@@ -53,19 +53,21 @@ const Home = () => {
 
     // menu for navigation
 
+    // settings for navigation menu options
     const navigationMenuSettings = {
         styling: {
             backgroundColor: 'primary.main',
             textAlign: 'left',
             paddingTop: '5%',
             paddingBottom: '5%',
-            paddingLeft: '2%'
+            paddingLeft: '5%'
         },
         hover: {
             transformOrigin: 'left'
         }
     }
 
+    // navigation menu options
     const navigationMenu = [
         {
             title: 'Work History',
