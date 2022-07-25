@@ -143,7 +143,7 @@ const Home = () => {
                             mt='1%'
                             ml='1%'>
 
-                            <SideMenu options={quickTextMenu}/>
+                            <SideMenu options={quickTextMenu} slideDirection='right'/>
 
                         </Box>
                         
@@ -184,7 +184,7 @@ const Home = () => {
                             mt='1%'
                             mr='1%'>
 
-                            <SideMenu options={navigationMenu}/>
+                            <SideMenu options={navigationMenu} slideDirection='left'/>
 
                         </Box>
 

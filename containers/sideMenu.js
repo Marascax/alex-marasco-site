@@ -1,9 +1,13 @@
-import { Divider } from '@mui/material';
+import Slide from '@mui/material/Slide';
 import Stack from '@mui/material/Stack';
 
 import SideMenuOption from '../components/sideMenuOption';
 
+import { useRef } from 'react';
+
 const SideMenu = props => {
+    const containerRef = useRef(null);
+
     // menu options to choose from
     const options = props.options;
 
@@ -13,12 +17,21 @@ const SideMenu = props => {
     });
 
     return (
+        <Slide
+            direction={props.slideDirection}
+            in 
+            mountOnEnter 
+            unmountOnExit 
+            container={containerRef.current}
+            timeout={500}
+            easing='ease-in-out'>
         <Stack
             width='100%'>
 
             {sideMenuOptions}
 
         </Stack>
+        </Slide>
     )
 }
 
