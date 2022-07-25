@@ -54,6 +54,8 @@ const SideMenuOption = props => {
             height='100%'
 
             position='relative'
+            onClick={() => alert('click')}
+
             sx={{
                 ...styleSettings
             }}>
@@ -61,6 +63,7 @@ const SideMenuOption = props => {
             <Typography variant='h4' fontFamily='Roboto' fontWeight={300}>
                 {title}
             </Typography>
+            
 
         </Box>
     )
